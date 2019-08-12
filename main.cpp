@@ -7,7 +7,7 @@ class Stack{
   private{
     chr A[MAX_SIZE];
     int top = -1;
-  }
+  }//private
   
   public{
     
@@ -32,31 +32,38 @@ class Stack{
       }
     }
   
+  }//Public
+  
+}//class Stack
+
+void Reverse(chr *A, int n){
+  Stack <chr> S;
+  
+  if(!IsEmpty){
+    for(int i = 0; i < n; i++){
+      S.Push(A[i]);
+    }
+
+    for(int i = 0; i < n; i++){
+      A[i] = S.Peek();
+      S.Pop();
+    }
+  }
+  
+  else{
+     print("There is no expression to reverse.");
   }
   
 }
 
-void Reverse(chr A, int n){
-  
-  for(int i=0; i < n; i++){
-    Push(A[i]);
-  }
-  
-  for(int i = 0; i < n; i++){
-    A[i] == Peek();
-    Pop();
-  }
-  
-};
-
 
 int main(){
-  chr A[MAX_SIZE];
+  chr A[64];
   
   printf("Input expression: ");
   gets(A);
   Reverse(A,strlen(A));
   
-  printf("Reverse: %c", A);
+  printf("Reverse: %s", A);
   
 }
